@@ -2,29 +2,27 @@
 
 // DONE Step 1: Setup the Project structure
 
+
+
+// Step 6: Write the logic to play the entire game
+
+// Step 4: Declare the players score variables
+let humanScore;
+let computerScore;
+
 // DONE Step 2: Write the logic to get the computer choice
 // function getcomputerChoice should random choose between rock paper or scissors
 // to get this, function should roll a number between 1 to 3, each one stands for one of those mentiond above
 // safe result in a variable 
 // console.log result and test the code
 
-// DONE Step 3: Write the logic to get the human choice
-// create new function getHumanChoice
-// gutHumanChoice should return a valid choice (test it!)
-
-// Step 4: Declare the players score variables
-
-// Step 5: Write the logic to play a single round
-
-// Step 6: Write the logic to play the entire game
-
-function getComputerChoiceNumber () {
+function getComputerChoiceNumber() {
     let computerChoiceNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
     return computerChoiceNumber;
-    }
+}
 
-function getComputerChoice () {
-    let computerNumber = getComputerChoiceNumber ();
+function getComputerChoice() {
+    let computerNumber = getComputerChoiceNumber();
     let computerChoice;
     if (computerNumber === 1) {
         computerChoice = "Rock";
@@ -34,9 +32,9 @@ function getComputerChoice () {
         computerChoice = "Scissors";
     }
     return computerChoice;
-    }
+}
 
-function getHumanChoiceNumber () {
+function getHumanChoiceNumber() {
     let humanChoiceNumber = ""
     do {
         humanChoiceNumber = parseInt(window.prompt("Choose Rock (1) Paper (2) or Scissors (3)", ""));
@@ -44,8 +42,11 @@ function getHumanChoiceNumber () {
     return humanChoiceNumber;
 }
 
-function getHumanChoice () {
-    let humanNumber = getHumanChoiceNumber ();
+// DONE Step 3: Write the logic to get the human choice
+// create new function getHumanChoice
+// gutHumanChoice should return a valid choice (test it!)
+function getHumanChoice() {
+    let humanNumber = getHumanChoiceNumber();
     let humanChoice;
     if (humanNumber === 1) {
         humanChoice = "Rock";
@@ -55,7 +56,39 @@ function getHumanChoice () {
         humanChoice = "Scissors";
     }
     return humanChoice;
-    }
+}
 
-// console.log(getHumanChoiceNumber())
-// console.log(getHumanChoice())
+// Step 5: Write the logic to play a single round
+// create function to start playing
+// ask for player choice, then run computerChoice function
+// compare both results, find winner or decide tie 
+// add win to global score functions
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === 1 && computerChoice === 2) {
+        computerScore++;
+        console.log("Computer wins!")
+    } else if (humanChoice === 2 && computerChoice === 3) {
+        computerScore++;
+        console.log("Computer wins!")
+    } else if (humanChoice === 3 && computerChoice === 1) {
+        computerScore++;
+        console.log("Computer wins!")
+    } else if (humanChoice === 1 && computerChoice === 3) {
+        humanScore++;
+        console.log("You win!")
+    } else if (humanChoice === 2 && computerChoice === 1) {
+        humanScore++;
+        console.log("You win!")
+    } else if (humanChoice === 3 && computerChoice === 2) {
+        humanScore++;
+        console.log("You win!")
+    } else {
+        console.log("Tie!")
+    }
+}
+
+ const humanSelection = getHumanChoiceNumber();
+ const computerSelection = getComputerChoiceNumber();
+
+playRound(humanSelection, computerSelection);
