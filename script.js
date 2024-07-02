@@ -8,7 +8,7 @@
 // safe result in a variable 
 // console.log result and test the code
 
-// Step 3: Write the logic to get the human choice
+// DONE Step 3: Write the logic to get the human choice
 // create new function getHumanChoice
 // gutHumanChoice should return a valid choice (test it!)
 
@@ -44,4 +44,18 @@ function getHumanChoiceNumber () {
     return humanChoiceNumber;
 }
 
+function getHumanChoice () {
+    let humanNumber = getHumanChoiceNumber ();
+    let humanChoice;
+    if (humanNumber === 1) {
+        humanChoice = "Rock";
+    } else if (humanNumber === 2) {
+        humanChoice = "Paper";
+    } else {
+        humanChoice = "Scissors";
+    }
+    return humanChoice;
+    }
+
 // console.log(getHumanChoiceNumber())
+// console.log(getHumanChoice())
