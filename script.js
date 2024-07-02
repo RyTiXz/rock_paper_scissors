@@ -9,3 +9,15 @@
 // Step 4: Declare the players score variables
 // Step 5: Write the logic to play a single round
 // Step 6: Write the logic to play the entire game
+
+function getComputerChoice () {
+    let ComputerChoice = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+    if (ComputerChoice === 1) {
+        ComputerChoice = "Rock";
+    } else if (ComputerChoice === 2) {
+        ComputerChoice = "Paper";
+    } else {
+        ComputerChoice = "Scissors";
+    }
+    return ComputerChoice
+    }
