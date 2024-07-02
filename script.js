@@ -10,7 +10,7 @@
 
 // Step 3: Write the logic to get the human choice
 // create new function getHumanChoice
-// gutHumanChoice should return
+// gutHumanChoice should return a valid choice (test it!)
 
 // Step 4: Declare the players score variables
 
@@ -35,3 +35,13 @@ function getComputerChoice () {
     }
     return computerChoice;
     }
+
+function getHumanChoiceNumber () {
+    let humanChoiceNumber = ""
+    do {
+        humanChoiceNumber = parseInt(window.prompt("Choose Rock (1) Paper (2) or Scissors (3)", ""));
+    } while (isNaN(humanChoiceNumber) || humanChoiceNumber > 3 || humanChoiceNumber < 1);
+    return humanChoiceNumber;
+}
+
+// console.log(getHumanChoiceNumber())
