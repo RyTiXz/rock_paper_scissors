@@ -4,11 +4,10 @@
 
 
 
-// Step 6: Write the logic to play the entire game
 
 // Step 4: Declare the players score variables
-let humanScore;
-let computerScore;
+let humanScore = 0;
+let computerScore = 0;
 
 // DONE Step 2: Write the logic to get the computer choice
 // function getcomputerChoice should random choose between rock paper or scissors
@@ -67,28 +66,37 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === 1 && computerChoice === 2) {
         computerScore++;
-        console.log("Computer wins!")
+        console.log("Computer wins!");
     } else if (humanChoice === 2 && computerChoice === 3) {
         computerScore++;
-        console.log("Computer wins!")
+        console.log("Computer wins!");
     } else if (humanChoice === 3 && computerChoice === 1) {
         computerScore++;
-        console.log("Computer wins!")
+        console.log("Computer wins!");
     } else if (humanChoice === 1 && computerChoice === 3) {
         humanScore++;
-        console.log("You win!")
+        console.log("You win!");
     } else if (humanChoice === 2 && computerChoice === 1) {
         humanScore++;
-        console.log("You win!")
+        console.log("You win!");
     } else if (humanChoice === 3 && computerChoice === 2) {
         humanScore++;
-        console.log("You win!")
+        console.log("You win!");
     } else {
-        console.log("Tie!")
+        console.log("Tie!");
     }
 }
 
- const humanSelection = getHumanChoiceNumber();
- const computerSelection = getComputerChoiceNumber();
+// Step 6: Write the logic to play the entire game
+function playGame() {
+    for (let i = 1; i <= 5; i++) {
+        const humanSelection = getHumanChoiceNumber();
+        const computerSelection = getComputerChoiceNumber();
+        playRound(humanSelection, computerSelection);
+        console.log("Round:" + " " + i);
+        console.log("Player has a score of" + " " + humanScore);
+        console.log("Computer has a score of" + " " + computerScore);
+    } 
+}
 
-playRound(humanSelection, computerSelection);
+playGame()
