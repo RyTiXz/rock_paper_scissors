@@ -2,14 +2,11 @@
 
 // DONE Step 1: Setup the Project structure
 
-
-
-
 // Step 4: Declare the players score variables
 let humanScore = 0;
 let computerScore = 0;
-let player = "";
-let computer = "";
+let humanChoice = "";
+let computerChoice = "";
 
 // DONE Step 2: Write the logic to get the computer choice
 // function getcomputerChoice should random choose between rock paper or scissors
@@ -24,7 +21,6 @@ function getComputerChoiceNumber() {
 
 function getComputerChoice() {
     let computerNumber = getComputerChoiceNumber();
-    let computerChoice;
     if (computerNumber === 1) {
         computerChoice = "Rock";
     } else if (computerNumber === 2) {
@@ -35,6 +31,9 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+// DONE Step 3: Write the logic to get the human choice
+// create new function getHumanChoice
+// gutHumanChoice should return a valid choice (test it!)
 function getHumanChoiceNumber() {
     let humanChoiceNumber = ""
     do {
@@ -43,12 +42,8 @@ function getHumanChoiceNumber() {
     return humanChoiceNumber;
 }
 
-// DONE Step 3: Write the logic to get the human choice
-// create new function getHumanChoice
-// gutHumanChoice should return a valid choice (test it!)
 function getHumanChoice() {
     let humanNumber = getHumanChoiceNumber();
-    let humanChoice;
     if (humanNumber === 1) {
         humanChoice = "Rock";
     } else if (humanNumber === 2) {
@@ -58,32 +53,31 @@ function getHumanChoice() {
     }
     return humanChoice;
 }
-
 // Step 5: Write the logic to play a single round
 // create function to start playing
 // ask for player choice, then run computerChoice function
 // compare both results, find winner or decide tie 
 // add win to global score functions
 
-function playRound(humanChoice, computerChoice) {
-    if (humanChoice === 1 && computerChoice === 2) {
+function playRound(human, computer) {
+    if (human === "Rock" && computer === "Paper") {
         computerScore++;
         console.log("Computer wins!");
-    } else if (humanChoice === 2 && computerChoice === 3) {
+    } else if (human === "Paper" && computer === "Scissors") {
         computerScore++;
         console.log("Computer wins!");
-    } else if (humanChoice === 3 && computerChoice === 1) {
+    } else if (human === "Scissors" && computer === "Rock") {
         computerScore++;
         console.log("Computer wins!");
-    } else if (humanChoice === 1 && computerChoice === 3) {
+    } else if (human === "Rock" && computer === "Scissors") {
         humanScore++;
-        console.log("You win!");
-    } else if (humanChoice === 2 && computerChoice === 1) {
+        console.log("Player wins!");
+    } else if (human === "Paper" && computer === "Rock") {
         humanScore++;
-        console.log("You win!");
-    } else if (humanChoice === 3 && computerChoice === 2) {
+        console.log("Player wins!");
+    } else if (human === "Scissors" && computer === "Paper") {
         humanScore++;
-        console.log("You win!");
+        console.log("Player wins!");
     } else {
         console.log("Tie!");
     }
@@ -92,14 +86,26 @@ function playRound(humanChoice, computerChoice) {
 // Step 6: Write the logic to play the entire game
 function playGame() {
     for (let i = 1; i <= 5; i++) {
-        const humanSelection = getHumanChoiceNumber();
-        const computerSelection = getComputerChoiceNumber();
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
         console.log("Round:" + " " + i);
+        console.log("Player chose" + " " + humanChoice)
         console.log("Computer chose" + " " + computerChoice)
         console.log("Player has a score of" + " " + humanScore);
         console.log("Computer has a score of" + " " + computerScore);
+        console.log("");
     } 
+    if (humanScore > computerScore) {
+        console.log("Player won this Game!")
+        console.log("");
+    } else if (humanScore < computerScore) {
+        console.log("Computer won this Game!")
+        console.log("");
+    } else {
+        console.log("This game ends with a tie!")
+        console.log("");
+    }
 }
 
 playGame()
