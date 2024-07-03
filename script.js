@@ -8,6 +8,8 @@
 // Step 4: Declare the players score variables
 let humanScore = 0;
 let computerScore = 0;
+let player = "";
+let computer = "";
 
 // DONE Step 2: Write the logic to get the computer choice
 // function getcomputerChoice should random choose between rock paper or scissors
@@ -94,6 +96,7 @@ function playGame() {
         const computerSelection = getComputerChoiceNumber();
         playRound(humanSelection, computerSelection);
         console.log("Round:" + " " + i);
+        console.log("Computer chose" + " " + computerChoice)
         console.log("Player has a score of" + " " + humanScore);
         console.log("Computer has a score of" + " " + computerScore);
     } 
