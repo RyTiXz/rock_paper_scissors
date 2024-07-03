@@ -48,7 +48,7 @@ function getHumanChoice() {
         humanChoice = "Rock";
     } else if (humanNumber === 2) {
         humanChoice = "Paper";
-    } else {
+    } else if (humanNumber === 3) {
         humanChoice = "Scissors";
     }
     return humanChoice;
