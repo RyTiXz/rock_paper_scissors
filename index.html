@@ -5,11 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
 </head>
 <body>
-    <p>Hello</p>
-    <p>Please open the Terminal to play the Game</p>
-    <p>(right click -> "Inspect", then open "Console")</p>
+    <h1 id="header">Rock Paper Scissors</h1>
+    <div class="upperArea">
+        <p class="description">
+            Player! Choose your fighter! <br>
+            First to get five points wins!</p>
+        <div class="buttons">
+            <button class="btn" id="rock">Rock</button>
+            <button class="btn" id="paper">Paper</button>
+            <button class="btn" id="scissors">Scissors</button>
+        </div>
+    </div>
+    <div class="lowerArea">
+        <div class="playerResult">
+            <div class = "gameResult">Player Points:</div>
+            <button id="playerCounter">0</button>
+        </div>
+        <div class="computerResult">
+            <div class = "gameResult">Computer Points:</div> 
+                <button id="computerCounter">0</button>
+        </div>
+    </div>
+    <div id="chosenResult"></div>
+    <div class="replayButton"></div>
 </body>
+<script src="script.js"></script>
 </html>
